@@ -1,0 +1,15 @@
+@use "variables" as v;
+
+%hover_black {
+  &:hover {
+    cursor: pointer;
+    color: v.$color_black;
+  }
+}
+
+%hover_black-icon {
+  &:hover {
+    cursor: pointer;
+    fill: v.$color_black;
+  }
+}
