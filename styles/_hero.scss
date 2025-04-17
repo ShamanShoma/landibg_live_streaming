@@ -1,0 +1,227 @@
+@use "variables" as v;
+@use "placeholders";
+@use "mixsins" as m;
+@use "sass:color";
+
+.hero {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1346px;
+  height: 871px;
+  padding: 154px 0 65px;
+  background: url("../assets/img/cloud.webp") center/contain no-repeat;
+
+  &__content {
+    position: relative;
+    width: 930px;
+    height: 361px;
+    margin: 0 auto 167px;
+
+    .hero__title {
+      @include m.font(120px, 700, v.$color_black);
+      line-height: 100%;
+    }
+
+    .hero__action-btn {
+      position: absolute;
+      bottom: 21px;
+      right: 0px;
+      border: none;
+      border-radius: 45px;
+      width: 379px;
+      height: 80px;
+      background: v.$color_black;
+      @include m.font(28px, 500, v.$color_white);
+
+      &:hover {
+        cursor: pointer;
+        background-color: color.adjust(v.$color_black, $alpha: -0.35);
+      }
+    }
+  }
+
+  &__notify {
+    position: relative;
+    width: 683px;
+    height: 68px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: v.$color_blue;
+    @include m.d-flex(end, center, nowrap, row, 29px);
+    padding-right: 10px;
+
+    &-img {
+      position: absolute;
+      top: -73px;
+      left: -45px;
+      width: 126px;
+      height: 198px;
+    }
+
+    &-content {
+      width: 452px;
+      height: 100%;
+      @include m.d-flex(center, center);
+      @include m.font(14px, 400, v.$color_black);
+      line-height: 100%;
+      text-transform: uppercase;
+      border-right: 1px solid v.$color_white;
+    }
+
+    &-btn {
+      @include m.font(25px, 400, v.$color_black);
+      line-height: 56%;
+      border: none;
+      background: none;
+      text-transform: uppercase;
+      @extend %hover_light;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 190px;
+    left: 0;
+    &-content {
+      position: relative;
+      @include m.font(16px, 500, v.$color_white);
+      writing-mode: vertical-rl;
+
+      &::after {
+        position: absolute;
+        top: 95px;
+        left: 8px;
+        display: block;
+        content: "";
+        width: 1px;
+        height: 75px;
+        background-color: v.$color_white;
+      }
+    }
+  }
+}
+
+@media (max-width: v.$medua_lg) {
+  .hero {
+    padding: 134px 0 46px;
+    background: url("../assets/img/cloud.webp") 0 30% / contain no-repeat;
+
+    &__content {
+      width: min(100%, 700px);
+      height: 500px;
+
+      .hero__title {
+        @include m.font(90px, 700, v.$color_black);
+      }
+
+      .hero__action-btn {
+        right: 240px;
+        bottom: -50px;
+      }
+    }
+
+    &__scroll {
+      bottom: 120px;
+    }
+  }
+}
+
+@media (max-width: v.$medua_md) {
+  .hero {
+    padding: 110px 15px 0;
+    background: url("../assets/img/cloud.webp") 0 21% / contain no-repeat;
+
+    &__content {
+      width: min(100%, 560px);
+      height: 400px;
+      margin: 0 auto 67px;
+
+      .hero__title {
+        @include m.font(75px, 700, v.$color_black);
+        line-height: 89%;
+      }
+
+      .hero__action-btn {
+        width: 259px;
+        height: 60px;
+        @include m.font(18px, 400, v.$color_white);
+        bottom: 60px;
+      }
+    }
+
+    &__notify {
+      width: 100%;
+      max-width: 450px;
+      height: fit-content;
+      padding: 0;
+      @include m.d-flex(start, center, nowrap, column);
+      &-content {
+        padding: 15px 10px 15px 90px;
+        width: 100%;
+        @include m.font(10px, 400, v.$color_black);
+        line-height: 140%;
+        border-right: none;
+        border-bottom: 1px solid v.$color_white;
+      }
+      &-img {
+        left: -25px;
+      }
+      &-btn {
+        @include m.font(30px, 400, v.$color_black);
+        line-height: 47%;
+        padding: 18px 0 23px;
+      }
+    }
+
+    &__scroll {
+      bottom: 260px;
+    }
+  }
+}
+
+@media (max-width: v.$medua_sm) {
+  .hero {
+    height: 734px;
+    background: url("../assets/img/cloud.webp") 0 25% / contain no-repeat;
+
+    &__content {
+      max-width: 325px;
+      height: 330px;
+
+      .hero__title {
+        @include m.font(45px, 700, v.$color_black);
+      }
+
+      .hero__action-btn {
+        height: 52px;
+        @include m.font(18px, 500, v.$color_white);
+        bottom: 50px;
+        right: 65px;
+      }
+    }
+
+    &__notify {
+      width: 100%;
+      max-width: 316px;
+      height: fit-content;
+      padding: 0;
+      @include m.d-flex(start, center, nowrap, column);
+      &-content {
+        padding: 15px 10px 15px 90px;
+        width: 100%;
+        @include m.font(10px, 400, v.$color_black);
+        line-height: 140%;
+        border-right: none;
+        border-bottom: 1px solid v.$color_white;
+      }
+      &-img {
+        left: -25px;
+      }
+      &-btn {
+        @include m.font(30px, 400, v.$color_black);
+        line-height: 47%;
+        padding: 18px 0 23px;
+      }
+    }
+  }
+}
