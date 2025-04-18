@@ -1,0 +1,56 @@
+@use "variables" as v;
+@use "mixsins" as m;
+@use "sass:color";
+
+.info-card {
+  width: 178px;
+  height: 193px;
+  border-radius: 20px;
+  background-color: v.$color_blue;
+  padding: 18px 10px 0;
+  @include m.d-flex(start, center, nowrap, column, 0, 8px);
+
+  &__icon {
+    fill: v.$color-black;
+  }
+
+  &__title {
+    @include m.font(18px, 500, v.$color-black);
+    line-height: 100%;
+  }
+
+  &__desc {
+    @include m.font(16px, 300, v.$color-black);
+    line-height: 112%;
+    text-align: center;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: color.adjust(v.$color-white, $alpha: -0.75);
+
+    .info-card__icon {
+      fill: v.$color-white;
+    }
+
+    .info-card__title,
+    .info-card__desc {
+      color: v.$color-white;
+    }
+  }
+
+  @media (max-width: v.$medua_xs) {
+    width: 140px;
+    height: 152px;
+    padding: 15px 5px 0;
+
+    &__title {
+      @include m.font(14px, 500, v.$color-black);
+    }
+
+    &__desc {
+      @include m.font(11px, 300, v.$color-black);
+      line-height: 120%;
+    }
+  }
+}
