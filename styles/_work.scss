@@ -5,6 +5,10 @@
 .work-section {
   padding: 0 20px 185px;
 
+  @media (max-width: v.$medua_md) {
+    padding: 0 20px 88px;
+  }
+
   .work {
     margin: 0 auto;
     text-align: center;
