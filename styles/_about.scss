@@ -1,0 +1,201 @@
+@use "variables" as v;
+@use "mixsins" as m;
+@use "sass:color";
+
+.about-section {
+  padding: 140px 0 0;
+  @media (max-width: v.$medua_md) {
+    padding: 110px 0 0;
+  }
+
+  .about {
+    margin: 0 auto;
+    @include m.d-flex(start, center, nowrap, column, 0, 130px);
+
+    &__quality {
+      width: 100%;
+      height: 385px;
+      padding: 0 0 0 15px;
+      background: url("../assets/img/computer.webp") 90% 100% / contain
+        no-repeat;
+
+      &-title {
+        @include m.font(45px, 400, v.$color_white);
+        margin-bottom: 10px;
+      }
+
+      &-desc {
+        width: 590px;
+        @include m.font(20px, 300, v.$color_white);
+        line-height: 150%;
+      }
+
+      @media (max-width: v.$medua_xl) {
+        background: linear-gradient(
+            180deg,
+            rgba(103, 143, 242, 1) 0%,
+            rgba(9, 9, 121, 0) 90%
+          ),
+          url("../assets/img/computer.webp") 90% 45% / 500px no-repeat;
+      }
+
+      @media (max-width: v.$medua_md) {
+        height: 390px;
+        background: url("../assets/img/computer.webp") 99% 100% / 450px
+          no-repeat;
+
+        &-title {
+          @include m.font(35px, 400, v.$color_white);
+        }
+
+        &-desc {
+          width: 500px;
+          @include m.font(16px, 300, v.$color_white);
+          line-height: 125%;
+        }
+      }
+
+      @media (max-width: v.$medua_sm) {
+        background: url("../assets/img/computer.webp") 160px 100% / 337px
+          no-repeat;
+
+        &-desc {
+          width: 321px;
+        }
+      }
+    }
+
+    &__touch {
+      position: relative;
+      width: 100%;
+      height: 530px;
+      padding: 0 15px 0 0px;
+      @include m.d-flex(end, end, nowrap, column, 0, 20px);
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: -380px;
+        width: 100%;
+        height: 100%;
+        background: url("../assets/img/handset.webp") 0 0 / contain no-repeat;
+        transform: rotateZ(11deg);
+      }
+
+      &-title {
+        @include m.font(45px, 400, v.$color_white);
+        margin-bottom: 10px;
+      }
+
+      &-desc {
+        width: 479px;
+        @include m.font(20px, 300, v.$color_white);
+        line-height: 150%;
+        text-align: right;
+      }
+
+      @media (max-width: v.$medua_xl) {
+        &::before {
+          top: -40px;
+          left: -400px;
+        }
+      }
+
+      @media (max-width: v.$medua_lg) {
+        height: 480px;
+        &::before {
+          top: -50px;
+        }
+      }
+
+      @media (max-width: v.$medua_md) {
+        height: 430px;
+        @include m.d-flex(start, end, nowrap, column, 0, 20px);
+
+        &::before {
+          top: 0;
+          left: -280px;
+          background: url("../assets/img/handset.webp") 0 0 / 90% no-repeat;
+          transform: rotateZ(67deg);
+        }
+
+        &-title {
+          @include m.font(35px, 400, v.$color_white);
+        }
+
+        &-desc {
+          width: 328px;
+          @include m.font(16px, 300, v.$color_white);
+          line-height: 125%;
+        }
+      }
+
+      @media (max-width: v.$medua_sm) {
+        &::before {
+          top: 20px;
+          left: -210px;
+          background: url("../assets/img/handset.webp") -170px 0 / 125% no-repeat;
+          transform: rotateZ(67deg);
+        }
+      }
+
+      @media (max-width: v.$medua_xs) {
+        height: 350px;
+
+        &::before {
+          top: 65px;
+          left: -195px;
+        }
+      }
+    }
+
+    &__approach {
+      width: 100%;
+      height: 763px;
+      padding: 0 0 0 15px;
+      background: url("../assets/img/cactus.webp") 99% 100% / contain no-repeat;
+
+      &-title {
+        @include m.font(45px, 400, v.$color_white);
+        margin: 186px 0 10px;
+      }
+
+      &-desc {
+        width: 730px;
+        @include m.font(20px, 300, v.$color_white);
+        line-height: 150%;
+      }
+
+      @media (max-width: v.$medua_lg) {
+        height: 710px;
+
+        &-desc {
+          width: 450px;
+        }
+      }
+
+      @media (max-width: v.$medua_md) {
+        height: 650px;
+        background: url("../assets/img/cactus.webp") 99% 100% / 320px no-repeat;
+
+        &-title {
+          margin: 0 0 10px;
+          @include m.font(35px, 400, v.$color_white);
+        }
+
+        &-desc {
+          width: 320px;
+          @include m.font(16px, 300, v.$color_white);
+          line-height: 125%;
+        }
+      }
+
+      @media (max-width: v.$medua_sm) {
+        height: 550px;
+        background: url("../assets/img/cactus.webp") 99% 100% / 250px no-repeat;
+      }
+    }
+  }
+}
