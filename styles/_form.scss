@@ -41,7 +41,7 @@
     background: url("../assets/img/cloud-2.webp") center / contain no-repeat;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: -10px;
   }
 
   @media (max-width: v.$medua_xl) {
